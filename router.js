@@ -1,6 +1,9 @@
-function route (pathname) 
+var requestHandler = require("./requestHandler")
+
+function route (pathname, request, response)
 {
-    console.log("about to parse route " + pathname);
+    handler = requestHandler.handler[pathname];
+    handler && handler(request, response);
 }
 
 exports.route = route;

@@ -15,4 +15,8 @@ handler["/test"] = function test(request, response)
     response.write("here i am");
 };
 
+handler["/build"] = function(request, response) {
+    console.log(request);
+};
+
 exports.handler = handler;

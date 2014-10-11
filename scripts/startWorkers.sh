@@ -1,2 +1,2 @@
 #!/bin/bash
-nodejs ../workers/builderWorker.js
+node ../workers/builderWorker.js

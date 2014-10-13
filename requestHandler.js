@@ -1,22 +1,23 @@
-var handler = {}
-var Gearman = require("gearman").Gearman
+var jobDispatcher = require("./jobDispatcher");
 
-handler["/test"] = function test(request, response)
-{
-    var client = new Gearman("localhost", 4730, {timeout:3000});
-    client.on("WORK_COMPLETE", function(job){
-        console.log("this is work complete");
-        console.log(job.payload.toString());
-        client.close();
-    });
-    client.connect(function(){
-        client.submitJob("testFunction", "this is client test");
-    });
-    response.write("here i am");
+var postHandler = {};
+var getHandler = {};
+
+
+postHandler["/build"] = function(request, response) {
+    var appname = request.postData.appname;
+    var jobDescription = {
+        jobname:"build",
+        payload:{
+            appname:appname
+        },
+        completeHandler:function(jobDescription){
+            console.log("job completed");
+            console.log(jobDescription.result.toString());
+        }
+    };
+    jobDispatcher.dispatchJob(jobDescription);
 };
 
-handler["/build"] = function(request, response) {
-    console.log(request);
-};
-
-exports.handler = handler;
+exports.postHandler = postHandler;
+exports.getHandler = getHandler;

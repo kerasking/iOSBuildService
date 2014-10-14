@@ -84,24 +84,24 @@ How to Use
 How to maintain
 ---------------
 
-    what's the format of the request to call API?
+1. what's the format of the request to call API?
 
-        iOS Build Service Only receives POST requests, and there is only one API here.
+    iOS Build Service Only receives POST requests, and there is only one API here.
 
-        URL:
+    URL:
 
-            /build
+        /build
 
-        Header:
+    Header:
 
-            `Content-Type: application/json`
+        `Content-Type: application/json`
 
-        Body:
+    Body:
 
-            `{key:value}`
+        `{key:value}`
 
-            Body can be any JSON String.
+        Body can be any JSON String.
 
-    how to add an API?
+2. how to add an API?
 
 

@@ -7,8 +7,13 @@ Dependencies
 ------------
 
 [Gearman](http://gearman.org)
-download Gearman's souce code and build it, then run `gearmand -d`
+
+download Gearman's source code and build it, then run `gearmand -d`
 
 [node-gearman](https://github.com/mreinstein/node-gearman)
 
+`npm install gearman`
+
 [execSync](https://github.com/mgutz/execSync)
+
+`npm install execSync`

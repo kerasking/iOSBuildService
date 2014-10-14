@@ -85,9 +85,9 @@ How to Use
     
     you can calling API with CURL:
 
-    ```bash
-        curl -H "Content-Type: application/json" -d "{appname:'APEB'}" -X POST http://examp.le/build
-    ```
+```bash
+    curl -H "Content-Type: application/json" -d "{appname:'APEB'}" -X POST http://examp.le/build
+```
 
 How to maintain
 ---------------

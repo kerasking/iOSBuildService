@@ -33,13 +33,9 @@ How to Use
     `
 
         ├─XcodeProject
-
         │   ├── BashScripts
-
         │   │   ├── build.sh
-
         │   │   ├── create.sh
-
         │   │   └── update.sh
 
     `

@@ -7,3 +7,7 @@ Dependencies
 ------------
 
 [Gearman](http://gearman.org)
+
+[node-gearman](https://github.com/mreinstein/node-gearman)
+
+[execSync](https://github.com/mgutz/execSync)

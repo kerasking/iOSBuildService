@@ -81,6 +81,14 @@ How to Use
 
     `create.sh` and `update.sh` is used by worker to create or update your project.
 
+  2. calling API
+    
+    you can calling API with CURL:
+
+    ```bash
+        curl -H "Content-Type: application/json" -d "{appname:'APEB'}" -X POST http://examp.le/build
+    ```
+
 How to maintain
 ---------------
 

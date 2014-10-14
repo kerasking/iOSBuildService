@@ -6,9 +6,9 @@ provide an HTTP URL for other program to call, and then build iOS project
 Dependencies
 ------------
 
-[Gearman](http://gearman.org)
+download[Gearman](https://launchpad.net/gearmand) Gearman's official site: [Gearman](http://gearman.org)
 
-download Gearman's source code and build it, then run `gearmand -d`
+download Gearman's source code and build it, then run `gearmand -d` in terminal.
 
 [node-gearman](https://github.com/mreinstein/node-gearman)
 

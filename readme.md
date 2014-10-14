@@ -37,3 +37,45 @@ How to Use
         │   │   ├── create.sh
         │   │   └── update.sh
 
+    `build.sh` is used by worker to build your project, here is a template build.sh for you:
+
+    ```bash
+    #!/bin/bash
+
+    die() {
+        echo "$*" >&2
+        say "tsen poo jow, tsen poo jow, tsen poo jow, failed, to, build, Expended, Business, come here to check the log~!"
+        exit 1
+    }
+
+    app_name="APEB_`date '+%Y_%m_%d_%H_%M_%S'`"
+
+    # 这三个变量是根据项目的不同而有变化的
+    workspace_path="../Expended-Business.xcworkspace"
+    scheme="Expended-Business"
+    configuration="Debug"
+
+    # 一般情况下以下变量都不需要修改
+    current_dir=`pwd`
+
+    build_dir="$current_dir/destination/build"
+    symble_dir="$current_dir/destination/symbols"
+
+    archive_dir="$current_dir/destination/archive"
+    archive_path="$archive_dir/${app_name}"
+
+    ipa_dir="$current_dir/destination/ipa"
+    ipa_path="$ipa_dir/${app_name}"
+
+    mkdir -p $build_dir
+    mkdir -p $symble_dir
+    mkdir -p $archive_dir
+    mkdir -p $ipa_dir
+
+    xcodebuild -workspace "$workspace_path" -scheme "$scheme" -configuration "$configuration" CONFIGURATION_BUILD_DIR="$build_dir" DWARF_DSYM_FOLDER_PATH="$symble_dir" -archivePath "$archive_path" archive || die "Build Failed"
+
+    xcodebuild -exportArchive -exportFormat IPA -archivePath "$archive_path.xcarchive" -exportPath "$ipa_path" -exportSigningIdentity 'iPhone Distribution: Shanghai Andpay  Information Technology Co., Ltd.' || die "make ipa failed"
+
+    echo $ipa_path.ipa
+    say "construction complete!"
+    ```

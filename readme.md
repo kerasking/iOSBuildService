@@ -110,9 +110,9 @@ How to maintain
 
     Body:
 
-        `{key:value}`
+        `{appname:"APEB"}`
 
-        Body can be any JSON String.
+        yeah, Body can be any JSON String.
 
 2. how to add an API?
 
@@ -144,6 +144,6 @@ How to maintain
 
     `APEB` is the appname which was sent by your request
 
-    in `APEB`, there are repo, projectPath, and projectDirName. projectDirName is the directory name after running `git clone`, always same as the last segment of repo. worker will enter this directory and find `BashScript/create.sh` to create your project.
+    in `APEB`, there are `repo`, `projectPath`, and `projectDirName`. `projectDirName` is the directory name after running `git clone`, always same as the last segment of repo. worker will enter this directory and find `BashScript/create.sh` to create your project.
 
 

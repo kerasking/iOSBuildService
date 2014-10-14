@@ -30,7 +30,6 @@ How to Use
     
     in your XCode project, you should have a `BashScripts` dir like this:
 
-    `
 
         ├─XcodeProject
         │   ├── BashScripts
@@ -38,4 +37,3 @@ How to Use
         │   │   ├── create.sh
         │   │   └── update.sh
 
-    `

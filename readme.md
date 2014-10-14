@@ -73,9 +73,10 @@ How to Use
     mkdir -p $ipa_dir
 
     xcodebuild -workspace "$workspace_path" -scheme "$scheme" -configuration "$configuration" CONFIGURATION_BUILD_DIR="$build_dir" DWARF_DSYM_FOLDER_PATH="$symble_dir" -archivePath "$archive_path" archive || die "Build Failed"
-
     xcodebuild -exportArchive -exportFormat IPA -archivePath "$archive_path.xcarchive" -exportPath "$ipa_path" -exportSigningIdentity 'iPhone Distribution: Shanghai Andpay  Information Technology Co., Ltd.' || die "make ipa failed"
 
     echo $ipa_path.ipa
     say "construction complete!"
     ```
+
+    `create.sh` and `update.sh` is used by worker to create or update your 

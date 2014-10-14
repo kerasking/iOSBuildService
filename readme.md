@@ -93,8 +93,8 @@ How to Use
     curl -H "Content-Type: application/json" -d "{appname:'APEB'}" -X POST http://locahost:8888/build
 ```
 
-How to maintain
----------------
+FAQ
+---
 
 1. what's the format of the request to call API?
 

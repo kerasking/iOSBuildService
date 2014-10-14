@@ -22,3 +22,15 @@ Deploy
 ------
 
   run `scripts/deploy.sh` and `scripts/startWorkers.sh`
+
+How to Use
+----------
+
+  1. setting your project
+    
+    in your XCode project, you should have a `BashScripts` dir like this:
+        ├─XcodeProject
+        │   ├── BashScripts
+        │   │   ├── build.sh
+        │   │   ├── create.sh
+        │   │   └── update.sh

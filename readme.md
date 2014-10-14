@@ -93,6 +93,8 @@ How to Use
     curl -H "Content-Type: application/json" -d "{appname:'APEB'}" -X POST http://locahost:8888/build
 ```
 
+    and if you hear "construction complete", that means build successed. you can find your IPA at the path which was defined by your `build.sh`
+
 FAQ
 ---
 

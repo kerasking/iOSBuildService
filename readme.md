@@ -114,8 +114,6 @@ FAQ
 
         `{appname:"APEB"}`
 
-        yeah, Body can be any JSON String.
-
 2. how to add an API?
 
     in file requestHandler.js, handle function and URL to handle can be setted at once:

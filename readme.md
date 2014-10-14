@@ -23,6 +23,10 @@ Deploy
 
   run `scripts/deploy.sh` and `scripts/startWorkers.sh`
 
+  this Service is running at port 8888, you can call it as:
+
+  `http://localhost:8888/build`
+
 How to Use
 ----------
 
@@ -86,7 +90,7 @@ How to Use
     you can calling API with CURL:
 
 ```bash
-    curl -H "Content-Type: application/json" -d "{appname:'APEB'}" -X POST http://examp.le/build
+    curl -H "Content-Type: application/json" -d "{appname:'APEB'}" -X POST http://locahost:8888/build
 ```
 
 How to maintain
@@ -121,5 +125,25 @@ How to maintain
     ```
 
     which the URL is /foo, method is POST, and the function is paramed with request and response which are general nodeJS objects.
+
+3. how to use config file?
+
+    in the `workers` directory, there is a config file to indicate information for build worker.
+
+    here is an example:
+
+    ```javascript
+    configuration["buildWorker"] = {
+        "APEB":{
+            "repo":"git@gitcafe.com:casatwy/Expended-Business.git",
+            "projectPath":"/Users/zhouxuecheng/iOSBuildProjects/APEB",
+            "projectDirName":"Expended-Business"
+        }
+    };
+    ```
+
+    `APEB` is the appname which was sent by your request
+
+    in `APEB`, there are repo, projectPath, and projectDirName. projectDirName is the directory name after running `git clone`, always same as the last segment of repo. worker will enter this directory and find `BashScript/create.sh` to create your project.
 
 

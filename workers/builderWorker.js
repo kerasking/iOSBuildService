@@ -13,9 +13,18 @@ worker.on("JOB_ASSIGN", function(job){
 
     shell.run("mkdir -p " + projectPath);
     if (!fs.existsSync(projectPath+"/"+projectDirName)) {
+        console.log("creating project");
         shell.run("cd " + projectPath + " && git clone " + repo);
+        shell.run("cd "+projectPath+"/"+projectDirName+"/BashScripts && source ./create.sh");
+        console.log("create finished");
+    } else {
+        console.log("updating project");
+        shell.run("cd "+projectPath+"/"+projectDirName+"/BashScripts && source ./update.sh");
+        console.log("update finsihed")
     }
-    shell.run("cd "+projectPath+"/"+projectDirName+"/BashScripts && . ./create.sh");
+
+    var result = shell.run("cd "+projectPath+"/"+projectDirName+"/BashScripts && source ./build.sh");
+    console.log("build result is " + result);
 
     worker.sendWorkComplete(job.handle, "");
     worker.preSleep();

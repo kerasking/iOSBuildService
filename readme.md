@@ -104,4 +104,14 @@ How to maintain
 
 2. how to add an API?
 
+    in file requestHandler.js, handle function and URL to handle can be setted at once:
+
+    ```javascript
+        postHandler["/foo"] = function(request, response){
+            bar;
+        };
+    ```
+
+    which the URL is /foo, method is POST, and the function is paramed with request and response which are general nodeJS objects.
+
 

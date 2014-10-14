@@ -79,4 +79,29 @@ How to Use
     say "construction complete!"
     ```
 
-    `create.sh` and `update.sh` is used by worker to create or update your 
+    `create.sh` and `update.sh` is used by worker to create or update your project.
+
+How to maintain
+---------------
+
+    what's the format of the request to call API?
+
+        iOS Build Service Only receives POST requests, and there is only one API here.
+
+        URL:
+
+            /build
+
+        Header:
+
+            `Content-Type: application/json`
+
+        Body:
+
+            `{key:value}`
+
+            Body can be any JSON String.
+
+    how to add an API?
+
+

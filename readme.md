@@ -17,3 +17,8 @@ Dependencies
 3. [execSync](https://github.com/mgutz/execSync)
 
   `npm install execSync`
+
+Deploy
+------
+
+  run `scripts/deploy.sh` and `scripts/startWorkers.sh`
